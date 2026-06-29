@@ -1,1 +1,5 @@
-alert('Ui5 is ready');
+import Text from "sap/m/Text";
+
+new Text({
+    text: "Hello, World!"
+}).placeAt("content");
