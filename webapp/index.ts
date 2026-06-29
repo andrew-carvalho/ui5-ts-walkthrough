@@ -1,5 +1,8 @@
-import Text from "sap/m/Text";
+import XMLView from "sap/ui/core/mvc/XMLView";
 
-new Text({
-    text: "Hello, World!"
-}).placeAt("content");
+XMLView.create({
+    viewName: "ui5.walkthrough.view.App",
+    id: "app"
+}).then((view) => {
+    view.placeAt("content");
+})
