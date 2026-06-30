@@ -1,5 +1,3 @@
-import Control from "sap/ui/core/Control";
-import XMLView from "sap/ui/core/mvc/XMLView";
 import UIComponent from "sap/ui/core/UIComponent";
 import JSONModel from "sap/ui/model/json/JSONModel";
 
