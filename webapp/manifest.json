@@ -5,15 +5,22 @@
         "type": "application",
         "i18n": {
             "bundleName": "ui5.walkthrough.i18n.i18n",
-            "supportedLocales": [
-                ""
-            ],
+            "supportedLocales": [""],
             "fallbackLocale": ""
         },
         "title": "{{appTitle}}",
         "description": "{{appDescription}}",
         "applicationVersion": {
             "version": "1.0.0"
+        },
+        "dataSources": {
+            "invoiceRemote": {
+                "uri": "V2/Northwind/Northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "odataVersion": "2.0"
+                }
+            }
         }
     },
     "sap.ui": {
@@ -42,15 +49,12 @@
                 "type": "sap.ui.model.resource.ResourceModel",
                 "settings": {
                     "bundleName": "ui5.walkthrough.i18n.i18n",
-                    "supportedLocales": [
-                        ""
-                    ],
+                    "supportedLocales": [""],
                     "fallbackLocale": ""
                 }
             },
             "invoice": {
-                "type": "sap.ui.model.json.JSONModel",
-                "uri": "model/localInvoices.json"
+                "dataSource": "invoiceRemote"
             }
         },
         "resources": {
