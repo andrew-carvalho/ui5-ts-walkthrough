@@ -6,17 +6,17 @@ import JSONModel from "sap/ui/model/json/JSONModel";
  */
 export default class Component extends UIComponent {
     public static metadata = {
-        "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-        "manifest": "json"
-    }
+        interfaces: ["sap.ui.core.IAsyncContentCreation"],
+        manifest: "json",
+    };
 
     init(): void {
         super.init();
 
         const data = {
             recipient: {
-                name: "World"
-            }
+                name: "World",
+            },
         };
 
         const dataModel = new JSONModel(data);

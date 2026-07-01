@@ -13,15 +13,17 @@ export default class HelloPanel extends Controller {
 
     onShowHello(): void {
         const recipient = (this.getView()?.getModel() as JSONModel)?.getProperty("/recipient/name");
-        const resourceBundle = (this.getView()?.getModel("i18n") as ResourceModel)?.getResourceBundle() as ResourceBundle;
+        const resourceBundle = (
+            this.getView()?.getModel("i18n") as ResourceModel
+        )?.getResourceBundle() as ResourceBundle;
         const message = resourceBundle.getText("helloMsg", [recipient]) as string;
         MessageToast.show(message);
     }
 
     async onOpenDialog(): Promise<void> {
-        this.dialog ??= await this.loadFragment({
-            name: "ui5.walkthrough.view.HelloDialog"
-        }) as Dialog;
+        this.dialog ??= (await this.loadFragment({
+            name: "ui5.walkthrough.view.HelloDialog",
+        })) as Dialog;
 
         this.dialog.open();
     }

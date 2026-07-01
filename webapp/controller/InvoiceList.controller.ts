@@ -7,7 +7,7 @@ import JSONModel from "sap/ui/model/json/JSONModel";
 export default class InvoiceList extends Controller {
     onInit(): void | undefined {
         const viewModel = new JSONModel({
-            currency: "EUR"
+            currency: "EUR",
         });
 
         this.getView()?.setModel(viewModel, "view");
