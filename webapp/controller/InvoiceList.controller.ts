@@ -1,5 +1,6 @@
 import { SearchField$SearchEvent } from "sap/m/SearchField";
 import Controller from "sap/ui/core/mvc/Controller";
+import UIComponent from "sap/ui/core/UIComponent";
 import Filter from "sap/ui/model/Filter";
 import FilterOperator from "sap/ui/model/FilterOperator";
 import JSONModel from "sap/ui/model/json/JSONModel";
@@ -28,5 +29,10 @@ export default class InvoiceList extends Controller {
         const list = this.byId("invoiceList");
         const binding = list?.getBinding("items") as ListBinding;
         binding?.filter(filter);
+    }
+
+    onPress(): void {
+        const router = UIComponent.getRouterFor(this);
+        router.navTo("detail");
     }
 }
