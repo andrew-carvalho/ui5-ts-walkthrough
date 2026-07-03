@@ -6,12 +6,14 @@
     "scripts": {
         "start": "ui5 serve -o index.html",
         "mock": "ui5 serve -o test/mockServer.html",
-        "test": "ui5 serve -o test/testsuite.qunit.html"
+        "test": "ui5 serve -o test/testsuite.qunit.html",
+        "watch": "ui5 serve"
     },
     "devDependencies": {
         "@types/node": "^26.0.1",
         "@types/openui5": "^1.149.0",
         "@ui5/cli": "^4.0.57",
+        "@ui5/ts-interface-generator": "^0.11.1",
         "typescript": "^6.0.3",
         "ui5-middleware-livereload": "^3.3.1",
         "ui5-middleware-serveframework": "^3.8.2",
