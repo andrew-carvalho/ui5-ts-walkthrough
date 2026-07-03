@@ -6,9 +6,15 @@ import ProductRating, { ProductRating$ChangeEvent } from "../control/ProductRati
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import MessageToast from "sap/m/MessageToast";
+import JSONModel from "sap/ui/model/json/JSONModel";
 
 export default class Detail extends Controller {
     onInit(): void {
+        const viewModel = new JSONModel({
+            currency: "EUR",
+        });
+
+        this.getView()?.setModel(viewModel, "view");
         const router = UIComponent.getRouterFor(this);
         (router.getRoute("detail") as Route).attachPatternMatched(this.onObjectMatched, this);
     }
